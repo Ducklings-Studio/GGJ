@@ -21,8 +21,7 @@ func _input(event):
 			var cell_sp = tilemap.get_cell_autotile_coord(tile_pos.x, tile_pos.y)
 			var cell2 = tilemap.get_cell(31 - tile_pos.x, tile_pos.y)
 			if cell != -1 and cell2 == -1:
-				print(cell, " ", cell_sp)
-				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell)
+				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell, true, false, false, cell_sp)
 				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
 
 func _physics_process(_delta):
