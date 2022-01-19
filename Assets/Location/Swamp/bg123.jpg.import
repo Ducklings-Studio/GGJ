@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Background.jpg-4eb5ad505ceed2f580b5b29e6d4f9d49.stex"
+path="res://.import/bg123.jpg-4d4f1472430a7d75548731f4944ab003.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Location/Swamp/Background.jpg"
-dest_files=[ "res://.import/Background.jpg-4eb5ad505ceed2f580b5b29e6d4f9d49.stex" ]
+source_file="res://Assets/Location/Swamp/bg123.jpg"
+dest_files=[ "res://.import/bg123.jpg-4d4f1472430a7d75548731f4944ab003.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

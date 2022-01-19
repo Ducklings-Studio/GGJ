@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Location/Swamp/Background.jpg" type="Texture" id=7]
 
-[sub_resource type="ShaderMaterial" id=7]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 
 [node name="root" type="Node2D"]
@@ -58,7 +58,7 @@ centered = false
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="GS-rect" type="ColorRect" parent="HUD"]
-material = SubResource( 7 )
+material = SubResource( 1 )
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
