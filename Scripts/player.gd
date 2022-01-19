@@ -6,17 +6,40 @@ export (int) var gravity = 35
 
 var velocity = Vector2.ZERO
 
+#magic number
+const y_s = 308
+
+func _input(event):
+	if event is InputEventMouseButton and is_on_floor():
+		var pos = event.position
+		if event.pressed:
+			var tilemap = $"../TileMap"
+			var tile_pos = tilemap.world_to_map(pos)
+			var delta = $"../Player/Camera2D".get_camera_screen_center().y - y_s
+			tile_pos.y += round(delta/32)
+			var cell = tilemap.get_cellv(tile_pos)
+			var cell_sp = tilemap.get_cell_autotile_coord(tile_pos.x, tile_pos.y)
+			var cell2 = tilemap.get_cell(31 - tile_pos.x, tile_pos.y)
+			if cell != -1 and cell2 == -1:
+				print(cell, " ", cell_sp)
+				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell)
+				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
+
 func _physics_process(_delta):
 	velocity.y += gravity
 	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
 		$ASprite.play("walk")
-		$ASprite.flip_h = false
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		$ASprite.play("walk")
+	
+	if velocity.x < 0 or (velocity.x == 0 and speed < 0):
 		$ASprite.flip_h = true
+	else:
+		$ASprite.flip_h = false
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
 		$ASprite.play("jump")
