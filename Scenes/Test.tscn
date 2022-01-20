@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Shaders/grayscale.gdshader" type="Shader" id=1]
 [ext_resource path="res://Assets/TileSets/TileSet.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/Location/Swamp/Background.jpg" type="Texture" id=7]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=8]
 [ext_resource path="res://Styles/Pixellari_style.tres" type="Theme" id=9]
+[ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=10]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 
@@ -43,6 +44,22 @@ shader_param/noise = SubResource( 5 )
 [sub_resource type="StreamTexture" id=7]
 flags = 4
 load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 10 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.348
+shader_param/cutoff = 0.154
+shader_param/falloff = 0.01
+shader_param/edge_fade = 0.112
+shader_param/speed = 1.0
+shader_param/ray1_density = 10.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.354
+shader_param/color = Color( 1, 0.843137, 0, 1 )
+shader_param/hdr = false
+shader_param/seed = 5.0
 
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 1 )
@@ -143,6 +160,14 @@ theme = ExtResource( 5 )
 custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "0"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="God-rays" type="ColorRect" parent="HUD"]
+material = SubResource( 10 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
