@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/TileSets/GameTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Shaders/grayscale.gdshader" type="Shader" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=6]
+[ext_resource path="res://Styles/Filled_Style.tres" type="Theme" id=7]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=8]
+[ext_resource path="res://Styles/Pixellari_style.tres" type="Theme" id=9]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 
@@ -107,6 +110,43 @@ scale = Vector2( 0.5, 46.4217 )
 texture = SubResource( 7 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="MiniMenu" type="Control" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/MiniMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -276.0
+margin_top = -30.0
+margin_right = 276.0
+margin_bottom = 30.0
+theme = ExtResource( 9 )
+text = "YOU ARE A FAGGOT"
+
+[node name="Time" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -57.0
+margin_top = -48.0
+margin_right = 57.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GS-rect" type="ColorRect" parent="HUD"]
 material = SubResource( 8 )
