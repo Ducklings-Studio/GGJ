@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Particles2D",
+"class": "Particles2D_Plus",
+"language": "GDScript",
+"path": "res://Particles2D+.gd"
+} ]
+_global_script_class_icons={
+"Particles2D_Plus": ""
+}
+
 [application]
 
 config/name="GGJ"
