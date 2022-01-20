@@ -44,6 +44,8 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		$ASprite.play("walk")
+	if Input.is_action_just_pressed("ui_cancel"):
+		$"../../HUD/MiniMenu".set_visible(true)
 	
 	if velocity.x < 0 or (velocity.x == 0 and speed < 0):
 		$ASprite.flip_h = true
