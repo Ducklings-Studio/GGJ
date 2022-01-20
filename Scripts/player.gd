@@ -7,10 +7,10 @@ export (int) var gravity = 35
 var velocity = Vector2.ZERO
 
 #magic number
-const y_s = 308
+const y_s = 306
 
 func _input(event):
-	if event is InputEventMouseButton and is_on_floor():
+	if event is InputEventMouseButton:
 		var pos = event.position
 		if event.pressed:
 			var tilemap = $"../TileMap"
