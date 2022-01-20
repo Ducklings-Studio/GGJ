@@ -10,6 +10,7 @@ func _ready():
 	add_child(timer)
 	timer.start()
 
+
 func _on_timer_timeout():
 	time += 1
 	$Time.text = String(time)

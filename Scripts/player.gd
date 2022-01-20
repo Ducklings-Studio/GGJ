@@ -44,8 +44,6 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		$ASprite.play("walk")
-	if Input.is_action_just_pressed("ui_cancel"):
-		$"../../HUD/MiniMenu".set_visible(true)
 	
 	if velocity.x < 0 or (velocity.x == 0 and speed < 0):
 		$ASprite.flip_h = true
@@ -62,3 +60,9 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x, 0, 0.2)
+	
+func _unhandled_key_input(event):
+	if event.is_pressed():
+		if event.is_action_pressed("ui_cancel"):
+			$"../../HUD/MiniMenu".set_visible(!$"../../HUD/MiniMenu".visible)
+			get_tree().set_input_as_handled()
