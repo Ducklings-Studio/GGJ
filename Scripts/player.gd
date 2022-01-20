@@ -24,10 +24,10 @@ func _input(event):
 			var cell2 = tilemap.get_cell(31 - tile_pos.x, tile_pos.y)
 			if cell != -1 and cell2 == -1:
 				var effect = boom_effect.instance()
-				add_child(effect)
+				$"../.".add_child(effect)
 				effect.global_position = (2*tile_pos + Vector2.ONE)*16
 				var effect2 = boom_effect.instance()
-				add_child(effect2)
+				$"../.".add_child(effect2)
 				effect2.global_position = Vector2(63 - 2*tile_pos.x, 2*tile_pos.y+1)*16
 				
 				var fl = tilemap.is_cell_x_flipped(tile_pos.x, tile_pos.y)
