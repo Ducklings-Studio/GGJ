@@ -22,8 +22,9 @@ func _on_Resume_pressed():
 
 
 func _on_Settings_pressed():
-	pass # Replace with function body.
+	$MiniMenu.set_visible(false)
+	$Settings.set_visible(true)
 
 
 func _on_Exit_pressed():
-	pass # Replace with function body.
+	pass #TODO
