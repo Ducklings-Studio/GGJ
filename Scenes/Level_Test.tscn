@@ -43,7 +43,7 @@ shader_param/noise = SubResource( 6 )
 flags = 4
 load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -61,6 +61,7 @@ scale = Vector2( 64, 1 )
 collision_layer = 16
 collision_mask = 2
 script = ExtResource( 2 )
+_listenerNodePath = "/root/root"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -8 )

@@ -1,10 +1,19 @@
 extends Area2D
 
 var amount = 0
+export var _listenerNodePath = ""
 
-func _process(_delta):
+func _ready():
+	if (_listenerNodePath != "" && _listenerNodePath != null):
+		_listenerNodePath = get_node(_listenerNodePath)
+	elif _listenerNodePath == "":
+		_listenerNodePath = null
+	
+
+func _physics_process(_delta):
 	if amount == 2 and $"../Player".is_on_floor() and $"../Player_copy".is_on_floor():
-		Main._on_winning()
+		_listenerNodePath._on_winning()
+		$"..".queue_free()
 
 
 func _on_Area2D_body_entered(_body):

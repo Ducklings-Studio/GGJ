@@ -24,10 +24,6 @@ config/name="GGJ"
 run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Main="*res://Scripts/main.gd"
-
 [display]
 
 window/size/resizable=false
