@@ -6,7 +6,7 @@ var pathes = ["Level_Test.tscn", "Level_1.tscn", "Level_2.tscn"]
 var temp
 
 func _ready():
-	current_lvl = 1
+	current_lvl = 2
 	next_scene()
 	
 
