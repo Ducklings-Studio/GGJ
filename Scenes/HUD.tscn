@@ -1,0 +1,168 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Styles/button_styleboxflat.tres" type="StyleBox" id=1]
+[ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=2]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Shaders/grayscale.gdshader" type="Shader" id=4]
+[ext_resource path="res://Styles/new_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Styles/Pixellari_style.tres" type="Theme" id=6]
+[ext_resource path="res://Styles/Regular_Style.tres" type="Theme" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/angle = -0.3
+shader_param/position = -0.2
+shader_param/spread = 0.348
+shader_param/cutoff = 0.154
+shader_param/falloff = 0.01
+shader_param/edge_fade = 0.112
+shader_param/speed = 1.0
+shader_param/ray1_density = 10.0
+shader_param/ray2_density = 30.0
+shader_param/ray2_intensity = 0.354
+shader_param/color = Color( 1, 0.843137, 0, 1 )
+shader_param/hdr = false
+shader_param/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 4 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Time" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -57.0
+margin_top = -48.0
+margin_right = 57.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="God-rays" type="ColorRect" parent="."]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GS-rect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.396851
+margin_top = 0.396851
+margin_right = -0.396851
+margin_bottom = 0.396851
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -48.5
+margin_right = 48.5
+margin_bottom = 31.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
+text = "Swamp"
+align = 1
+valign = 1
+
+[node name="MiniMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MiniMenu"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -276.0
+margin_top = -30.0
+margin_right = 276.0
+margin_bottom = 30.0
+theme = ExtResource( 6 )
+text = "YOU ARE A FAGGOT"
+
+[node name="Resume" type="Button" parent="MiniMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -121.0
+margin_top = -137.0
+margin_right = 121.0
+margin_bottom = -71.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "RESUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="MiniMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -33.0
+margin_right = 150.0
+margin_bottom = 33.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "SETTINGS"
+
+[node name="Exit" type="Button" parent="MiniMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 71.0
+margin_right = 150.0
+margin_bottom = 137.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "EXIT"
+
+[connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="MiniMenu/Exit" to="." method="_on_Exit_pressed"]
