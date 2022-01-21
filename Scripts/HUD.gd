@@ -14,7 +14,6 @@ func _ready():
 func _on_timer_timeout():
 	time += 1
 	$Time.text = String(time)
-	
 
 
 func _on_Resume_pressed():
