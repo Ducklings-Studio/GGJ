@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Location/City/Background_02.png" type="Texture" id=4]
 [ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=8]
@@ -42,7 +41,7 @@ shader_param/noise = SubResource( 5 )
 flags = 4
 load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
@@ -113,5 +112,3 @@ material = SubResource( 6 )
 position = Vector2( 527.53, -692.346 )
 scale = Vector2( 0.5, 46.4217 )
 texture = SubResource( 7 )
-
-[node name="HUD" parent="." instance=ExtResource( 1 )]
