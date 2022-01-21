@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/TileSets/GameTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Location/Swamp/Background.jpg" type="Texture" id=4]
 [ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=5]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 
@@ -99,3 +100,5 @@ scroll_limit_end = Vector2( 0, 648 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
