@@ -26,6 +26,7 @@ func _on_winning():
 
 func _on_death():
 	print("You dead")
+	_listenerNodePath._reset_timer()
 	_load_scene(max(0, current_lvl - 1))
 
 

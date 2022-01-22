@@ -20,6 +20,10 @@ func _on_timer_timeout():
 	time += 1
 	$InGameHUD/Time.text = String(time)
 
+func _reset_timer():
+	time = 0
+	timer.start()
+	$InGameHUD/Time.text = "0"
 
 func _on_Resume_pressed():
 	$InGameHUD.set_visible(true)
@@ -35,9 +39,7 @@ func _on_Mini_Exit_pressed():
 func _on_Play_pressed():
 	$MainMenu.set_visible(false)
 	$InGameHUD.set_visible(true)
-	time = 0
-	timer.start()
-	$InGameHUD/Time.text = "0"
+	_reset_timer()
 	_listenerNodePath._load_scene(0)
 
 

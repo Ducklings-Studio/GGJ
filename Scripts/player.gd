@@ -6,38 +6,6 @@ export (int) var gravity = 35
 
 var velocity = Vector2.ZERO
 
-#magic number
-const y_s = 306
-
-var boom_effect = preload("res://Scenes/Boom.tscn")
-
-func _input(event):
-	if event is InputEventMouseButton:
-		var pos = event.position
-		if event.pressed:
-			var tilemap = $"../TileMap"
-			var tile_pos = tilemap.world_to_map(pos)
-			var delta = $"../Player/Camera2D".get_camera_screen_center().y - y_s
-			tile_pos.y += round(delta/32)
-			var cell = tilemap.get_cellv(tile_pos)
-			var cell_sp = tilemap.get_cell_autotile_coord(tile_pos.x, tile_pos.y)
-			var cell2 = tilemap.get_cell(31 - tile_pos.x, tile_pos.y)
-			if cell != -1 and cell2 == -1:
-				var effect = boom_effect.instance()
-				$"../.".add_child(effect)
-				effect.global_position = (2*tile_pos + Vector2.ONE)*16
-				var effect2 = boom_effect.instance()
-				$"../.".add_child(effect2)
-				effect2.global_position = Vector2(63 - 2*tile_pos.x, 2*tile_pos.y+1)*16
-				
-				var fl = tilemap.is_cell_x_flipped(tile_pos.x, tile_pos.y)
-				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell, 
-				!fl, false, false, cell_sp)
-				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
-				var kar = self.get_global_transform_with_canvas().get_origin()
-				
-				print(kar, tilemap.world_to_map(kar), tilemap.world_to_map(pos))
-
 func _physics_process(_delta):
 	velocity.y += gravity
 	
@@ -63,7 +31,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x, 0, 0.2)
-
+	
 func _unhandled_key_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("ui_cancel"):
