@@ -34,6 +34,9 @@ func _input(event):
 				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell, 
 				!fl, false, false, cell_sp)
 				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
+				var kar = self.get_global_transform_with_canvas().get_origin()
+				
+				print(kar, tilemap.world_to_map(kar), tilemap.world_to_map(pos))
 
 func _physics_process(_delta):
 	velocity.y += gravity
@@ -60,9 +63,12 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	velocity.x = lerp(velocity.x, 0, 0.2)
-	
+
 func _unhandled_key_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("ui_cancel"):
 			$"../../HUD/MiniMenu".set_visible(!$"../../HUD/MiniMenu".visible)
 			get_tree().set_input_as_handled()
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

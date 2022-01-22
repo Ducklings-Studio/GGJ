@@ -11,7 +11,10 @@ func _ready():
 	
 
 func _physics_process(_delta):
-	if amount == 2 and $"../Player".is_on_floor() and $"../Player_copy".is_on_floor():
+	if get_node_or_null("../Player_copy") == null:
+		_listenerNodePath._on_death()
+		$"..".queue_free()
+	elif amount == 2 and $"../Player".is_on_floor() and $"../Player_copy".is_on_floor():
 		_listenerNodePath._on_winning()
 		$"..".queue_free()
 

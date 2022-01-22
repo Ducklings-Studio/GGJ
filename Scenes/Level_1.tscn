@@ -7,39 +7,39 @@
 [ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=5]
 [ext_resource path="res://Scripts/Area2D.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="OpenSimplexNoise" id=9]
+[sub_resource type="OpenSimplexNoise" id=2]
 
-[sub_resource type="NoiseTexture" id=10]
+[sub_resource type="NoiseTexture" id=3]
 seamless = true
-noise = SubResource( 9 )
+noise = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=11]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 5 )
 shader_param/ref = -1.0
 shader_param/color = Color( 0.12549, 0.427451, 0.678431, 0.458824 )
 shader_param/dis_scale = Vector2( 0.408, 0.05 )
 shader_param/intensity = 0.07
 shader_param/speed = 0.05
-shader_param/noise = SubResource( 10 )
+shader_param/noise = SubResource( 3 )
 
-[sub_resource type="OpenSimplexNoise" id=12]
+[sub_resource type="OpenSimplexNoise" id=5]
 
-[sub_resource type="NoiseTexture" id=13]
+[sub_resource type="NoiseTexture" id=6]
 seamless = true
-noise = SubResource( 12 )
+noise = SubResource( 5 )
 
-[sub_resource type="ShaderMaterial" id=14]
+[sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 5 )
 shader_param/ref = 1.0
 shader_param/color = Color( 0.12549, 0.427451, 0.678431, 0.458824 )
 shader_param/dis_scale = Vector2( 0.408, 0.05 )
 shader_param/intensity = 0.07
 shader_param/speed = 0.05
-shader_param/noise = SubResource( 13 )
+shader_param/noise = SubResource( 6 )
 
-[sub_resource type="StreamTexture" id=15]
+[sub_resource type="StreamTexture" id=8]
 flags = 4
 load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
@@ -61,7 +61,7 @@ script = ExtResource( 7 )
 _listenerNodePath = "/root/root"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 17 )
+shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 50, 590 )
@@ -94,17 +94,17 @@ jump_speed = -900
 gravity = 50
 
 [node name="left-mirror" type="Sprite" parent="."]
-material = SubResource( 11 )
+material = SubResource( 4 )
 position = Vector2( -473.756, -1291.82 )
 scale = Vector2( 0.5, 46.1796 )
 texture = ExtResource( 1 )
 offset = Vector2( 1940.03, 13.9461 )
 
 [node name="right-mirror" type="Sprite" parent="."]
-material = SubResource( 14 )
+material = SubResource( 7 )
 position = Vector2( 527.53, -692.346 )
 scale = Vector2( 0.5, 46.4217 )
-texture = SubResource( 15 )
+texture = SubResource( 8 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_limit_end = Vector2( 0, 648 )
