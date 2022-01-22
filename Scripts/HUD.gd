@@ -40,7 +40,7 @@ func _on_Play_pressed():
 	$MainMenu.set_visible(false)
 	$InGameHUD.set_visible(true)
 	_reset_timer()
-	_listenerNodePath._load_scene(1)
+	_listenerNodePath._load_scene(3)
 
 
 func _on_Main_Exit_pressed():
