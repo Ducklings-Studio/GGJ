@@ -9,7 +9,7 @@ var music_vol
 var audio_vol
 
 func _ready():
-	music_vol = 0
+	music_vol = -40
 	audio_vol = 0
 	set_music()
 	for i in num_players:

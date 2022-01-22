@@ -58,3 +58,7 @@ func _on_Settings_Exit_pressed():
 	$Settings.set_visible(false)
 	$MainMenu.set_visible(fromMain)
 	$MiniMenu.set_visible(!fromMain)
+	
+	
+func _change_Loc_Name(name):
+	$InGameHUD/LocationName.text = name
