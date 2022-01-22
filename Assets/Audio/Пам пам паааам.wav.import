@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Пам пам паааам.wav-d18d6be93d8b8187a1dc2e830c9ad7fa.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Пам пам паааам.wav"
+dest_files=[ "res://.import/Пам пам паааам.wav-d18d6be93d8b8187a1dc2e830c9ad7fa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

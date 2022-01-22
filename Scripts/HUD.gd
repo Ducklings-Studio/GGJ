@@ -2,13 +2,18 @@ extends CanvasLayer
 
 
 var time 
+var timer
+export var _listenerNodePath = ""
+
 
 func _ready():
-	time = 0
-	var timer = Timer.new()
+	if (_listenerNodePath != "" && _listenerNodePath != null):
+		_listenerNodePath = get_node(_listenerNodePath)
+	elif _listenerNodePath == "":
+		_listenerNodePath = null
+	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer)
-	timer.start()
 
 
 func _on_timer_timeout():
@@ -16,7 +21,6 @@ func _on_timer_timeout():
 	$InGameHUD/Time.text = String(time)
 
 
-#mb unite with _on_Play_pressed
 func _on_Resume_pressed():
 	$InGameHUD.set_visible(true)
 	$MiniMenu.set_visible(false)
@@ -25,18 +29,23 @@ func _on_Resume_pressed():
 func _on_Mini_Exit_pressed():
 	$MiniMenu.set_visible(false)
 	$MainMenu.set_visible(true)
-
-
-func _on_Main_Exit_pressed():
-	get_tree().quit()
+	timer.stop()
 
 
 func _on_Play_pressed():
 	$MainMenu.set_visible(false)
 	$InGameHUD.set_visible(true)
-	#TODO add lvl loading
+	time = 0
+	timer.start()
+	$InGameHUD/Time.text = "0"
+	_listenerNodePath._load_scene(0)
 
-var fromMain
+
+func _on_Main_Exit_pressed():
+	get_tree().quit()
+	
+
+var fromMain = true
 
 func _on_Settings_pressed(isMain):
 	$Settings.set_visible(true)

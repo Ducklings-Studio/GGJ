@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Перемещение в зазеркалье 2.wav-3c20e2d18a03fa1e00912785329dd2eb.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Перемещение в зазеркалье 2.wav"
+dest_files=[ "res://.import/Перемещение в зазеркалье 2.wav-3c20e2d18a03fa1e00912785329dd2eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

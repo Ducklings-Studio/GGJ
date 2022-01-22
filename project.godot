@@ -8,21 +8,18 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Particles2D",
-"class": "Particles2D_Plus",
-"language": "GDScript",
-"path": "res://Particles2D+.gd"
-} ]
-_global_script_class_icons={
-"Particles2D_Plus": ""
-}
-
 [application]
 
-config/name="GGJ"
+config/name="Split World"
 run/main_scene="res://Scenes/MainScene.tscn"
+boot_splash/image="res://Assets/Other/logo512_512.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 1, 0.705882, 0, 1 )
 config/icon="res://icon.png"
+
+[autoload]
+
+AudioManager="*res://Scripts/audio_manager.gd"
 
 [display]
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Castle.wav-4b08f9f2bf07f8d1bd6f80aa0df4b94c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Castle.wav"
+dest_files=[ "res://.import/Castle.wav-4b08f9f2bf07f8d1bd6f80aa0df4b94c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
