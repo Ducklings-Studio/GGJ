@@ -1,0 +1,250 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/Location/Castle/NightSky.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Location/Castle/Castle_Wall.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Area2D.gd" type="Script" id=5]
+[ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "Castle_Wall.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 96, 224, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Castle_Wall.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 128, 224, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Castle_Wall.png 2"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 160, 224, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Castle_Wall.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 96, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Castle_Wall.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 128, 0, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Castle_Wall.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 160, 0, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Castle_Wall.png 6"
+6/texture = ExtResource( 4 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 192, 0, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[sub_resource type="OpenSimplexNoise" id=6]
+
+[sub_resource type="NoiseTexture" id=7]
+seamless = true
+noise = SubResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 6 )
+shader_param/ref = -1.0
+shader_param/color = Color( 0.12549, 0.427451, 0.678431, 0.458824 )
+shader_param/dis_scale = Vector2( 0.408, 0.05 )
+shader_param/intensity = 0.07
+shader_param/speed = 0.05
+shader_param/noise = SubResource( 7 )
+
+[sub_resource type="OpenSimplexNoise" id=9]
+
+[sub_resource type="NoiseTexture" id=10]
+seamless = true
+noise = SubResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 6 )
+shader_param/ref = 1.0
+shader_param/color = Color( 0.12549, 0.427451, 0.678431, 0.458824 )
+shader_param/dis_scale = Vector2( 0.408, 0.05 )
+shader_param/intensity = 0.07
+shader_param/speed = 0.05
+shader_param/noise = SubResource( 10 )
+
+[sub_resource type="StreamTexture" id=12]
+flags = 4
+load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 917507, 1610612740, 0, 917508, 1073741828, 0, 917509, 1610612740, 0, 917510, 1610612739, 0, 917511, 1610612740, 0, 917512, 1073741828, 0, 917513, 1610612740, 0, 917514, 1610612739, 0, 917515, 1610612740, 0, 917516, 1073741828, 0, 917517, 1610612740, 0, 917518, 1610612739, 0, 917519, 1610612740, 0, 917520, 1073741828, 0, 917521, 1610612740, 0, 917522, 1610612739, 0, 917523, 1610612740, 0, 917524, 1073741828, 0, 917525, 1610612740, 0, 917526, 1610612739, 0, 917527, 1610612740, 0, 917528, 1073741828, 0, 917529, 1610612740, 0, 917530, 1610612739, 0, 917531, 1610612740, 0, 917532, 1073741828, 0, 983043, 5, 0, 983044, 536870917, 0, 983045, 5, 0, 983046, 3, 0, 983047, 5, 0, 983048, 536870917, 0, 983049, 5, 0, 983050, 3, 0, 983051, 5, 0, 983052, 536870917, 0, 983053, 5, 0, 983054, 3, 0, 983055, 5, 0, 983056, 536870917, 0, 983057, 5, 0, 983058, 3, 0, 983059, 5, 0, 983060, 536870917, 0, 983061, 5, 0, 983062, 3, 0, 983063, 5, 0, 983064, 536870917, 0, 983065, 5, 0, 983066, 3, 0, 983067, 5, 0, 983068, 536870917, 0, 1048579, 1610612740, 0, 1048580, 1073741828, 0, 1048581, 1610612740, 0, 1048582, 1610612739, 0, 1048583, 1610612740, 0, 1048584, 1073741828, 0, 1048585, 1610612740, 0, 1048586, 1610612739, 0, 1048587, 1610612740, 0, 1048588, 1073741828, 0, 1048589, 1610612740, 0, 1048590, 1610612739, 0, 1048591, 1610612740, 0, 1048592, 1073741828, 0, 1048593, 1610612740, 0, 1048594, 1610612739, 0, 1048595, 1610612740, 0, 1048596, 1073741828, 0, 1048597, 1610612740, 0, 1048598, 1610612739, 0, 1048599, 1610612740, 0, 1048600, 1073741828, 0, 1048601, 1610612740, 0, 1048602, 1610612739, 0, 1048603, 1610612740, 0, 1048604, 1073741828, 0, 1114115, 5, 0, 1114116, 536870917, 0, 1114117, 5, 0, 1114118, 3, 0, 1114119, 5, 0, 1114120, 536870917, 0, 1114121, 5, 0, 1114122, 3, 0, 1114123, 5, 0, 1114124, 536870917, 0, 1114125, 5, 0, 1114126, 3, 0, 1114127, 5, 0, 1114128, 536870917, 0, 1114129, 5, 0, 1114130, 3, 0, 1114131, 5, 0, 1114132, 536870917, 0, 1114133, 5, 0, 1114134, 3, 0, 1114135, 5, 0, 1114136, 536870917, 0, 1114137, 5, 0, 1114138, 3, 0, 1114139, 5, 0, 1114140, 536870917, 0, 1179651, 2, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 0, 0, 1179665, 2, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179672, 1, 0, 1179673, 1, 0, 1179674, 1, 0, 1179675, 1, 0, 1179676, 0, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 512, -2096 )
+scale = Vector2( 64, 1 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+_listenerNodePath = "/root/root"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 143.657, 551.902 )
+collision_layer = 2
+speed = 300
+jump_speed = -900
+gravity = 50
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+position = Vector2( -120, 0 )
+current = true
+limit_left = 0
+limit_right = 1024
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_top = 0.6
+drag_margin_right = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Player_copy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 878, 556 )
+collision_layer = 2
+speed = -300
+jump_speed = -900
+gravity = 50
+
+[node name="left-mirror" type="Sprite" parent="."]
+material = SubResource( 8 )
+position = Vector2( -473.756, -1291.82 )
+scale = Vector2( 0.5, 46.1796 )
+texture = ExtResource( 3 )
+offset = Vector2( 1940.03, 13.9461 )
+
+[node name="right-mirror" type="Sprite" parent="."]
+material = SubResource( 11 )
+position = Vector2( 527.53, -692.346 )
+scale = Vector2( 0.5, 46.4217 )
+texture = SubResource( 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_end = Vector2( 0, 648 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="NightSky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 519.857, -622.74 )
+scale = Vector2( 1.35619, 1.35619 )
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
