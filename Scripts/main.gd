@@ -3,7 +3,8 @@ extends Node2D
 var current_lvl
 var scenes = [preload("res://Scenes/Level_Test.tscn"), 
 				preload("res://Scenes/Level_1.tscn"),
-				preload("res://Scenes/Level_2.tscn")]
+				preload("res://Scenes/Level_2.tscn"),
+				preload("res://Scenes/Level_3.tscn")]
 const names = ["Test", "Swamp", "City", "Castle"]
 var temp
 export var _listenerNodePath = ""
