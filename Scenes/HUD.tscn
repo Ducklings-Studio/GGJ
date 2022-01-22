@@ -7,7 +7,7 @@
 [ext_resource path="res://Styles/new_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Styles/Pixellari_style.tres" type="Theme" id=6]
 [ext_resource path="res://Styles/Regular_Style.tres" type="Theme" id=7]
-[ext_resource path="res://Scripts/Settings.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Location/menu-background.png" type="Texture" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -31,14 +31,23 @@ shader = ExtResource( 4 )
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 3 )
 
-[node name="Time" type="Label" parent="."]
+[node name="InGameHUD" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="InGameHUD"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -57.0
-margin_top = -48.0
-margin_right = 57.0
+margin_left = 435.0
+margin_top = 512.0
+margin_right = 549.0
+margin_bottom = 560.0
 theme = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "0"
@@ -47,7 +56,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="God-rays" type="ColorRect" parent="."]
+[node name="God-rays" type="ColorRect" parent="InGameHUD"]
 visible = false
 material = SubResource( 1 )
 anchor_right = 1.0
@@ -55,6 +64,18 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="InGameHUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 443.5
+margin_right = 540.5
+margin_bottom = 31.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
+text = "Swamp"
+align = 1
+valign = 1
 
 [node name="GS-rect" type="ColorRect" parent="."]
 material = SubResource( 2 )
@@ -68,18 +89,6 @@ margin_bottom = 0.396851
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -48.5
-margin_right = 48.5
-margin_bottom = 31.0
-theme = ExtResource( 5 )
-custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
-text = "Swamp"
-align = 1
-valign = 1
 
 [node name="MiniMenu" type="Control" parent="."]
 visible = false
@@ -156,7 +165,6 @@ text = "EXIT"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -275,7 +283,80 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "BACK"
 
+[node name="MainMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu-background" type="Sprite" parent="MainMenu"]
+position = Vector2( 512, 300 )
+texture = ExtResource( 8 )
+
+[node name="Play" type="Button" parent="MainMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -204.0
+margin_right = 140.0
+margin_bottom = -144.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="MainMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -132.0
+margin_right = 133.0
+margin_bottom = -72.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "SETTINGS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="MainMenu"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -60.0
+margin_right = 133.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="MiniMenu/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="Settings/Exit" to="Settings" method="_on_Back_pressed"]
+[connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]
+[connection signal="pressed" from="MiniMenu/Exit" to="." method="_on_Mini_Exit_pressed"]
+[connection signal="pressed" from="Settings/Exit" to="." method="_on_Settings_Exit_pressed"]
+[connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed" binds= [ true ]]
+[connection signal="pressed" from="MainMenu/Exit" to="." method="_on_Main_Exit_pressed"]
