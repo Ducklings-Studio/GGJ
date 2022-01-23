@@ -6,6 +6,10 @@ var scenes = [preload("res://Scenes/Level_Test.tscn"),
 				preload("res://Scenes/Level_2.tscn"),
 				preload("res://Scenes/Level_3.tscn")]
 const names = ["Test", "Swamp", "City", "Castle"]
+var music = ["res://Assets/Audio/PamPam.wav",
+			"res://Assets/Audio/SwampBg.ogg", 
+			"res://Assets/Audio/MountainBg.ogg", 
+			"res://Assets/Audio/CastleBg.ogg"]
 var temp
 export var _listenerNodePath = ""
 
@@ -27,6 +31,7 @@ func _on_winning():
 
 func _on_death():
 	print("You dead")
+	AudioManager.play("res://Assets/Audio/Lose.wav")
 	_listenerNodePath._reset_timer()
 	_load_scene(max(0, current_lvl - 1))
 
@@ -43,6 +48,7 @@ func _load_scene(id):
 
 
 func next_scene():
+	AudioManager.set_music(music[current_lvl])
 	temp = scenes[current_lvl].instance()
 	call_deferred("add_child", temp)
 	_listenerNodePath._change_Loc_Name(names[current_lvl])

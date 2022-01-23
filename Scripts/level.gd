@@ -32,6 +32,7 @@ func _input(event):
 				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell, 
 				!fl, false, false, cell_sp)
 				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
+				AudioManager.play("res://Assets/Audio/Translation.wav")
 				if is_dead(pos):
 					$Player_copy.queue_free()
 

@@ -265,7 +265,6 @@ custom_styles/slider = SubResource( 4 )
 custom_styles/grabber_area_highlight = SubResource( 8 )
 custom_styles/grabber_area = SubResource( 5 )
 max_value = 10.0
-value = 2.0
 scrollable = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -305,7 +304,6 @@ custom_styles/slider = SubResource( 4 )
 custom_styles/grabber_area_highlight = SubResource( 10 )
 custom_styles/grabber_area = SubResource( 5 )
 max_value = 10.0
-value = 2.0
 scrollable = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -529,6 +527,10 @@ anims/updown = SubResource( 6 )
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]
 [connection signal="pressed" from="MiniMenu/Exit" to="." method="_on_Mini_Exit_pressed"]
+[connection signal="value_changed" from="Settings/HSlider" to="." method="_on_Music_value_changed"]
+[connection signal="value_changed" from="Settings/HSlider2" to="." method="_on_Audio_value_changed"]
+[connection signal="toggled" from="Settings/TimeCheckBox" to="." method="_on_TimeCheckBox_toggled"]
+[connection signal="toggled" from="Settings/LocCheckBox" to="." method="_on_LocCheckBox_toggled"]
 [connection signal="pressed" from="Settings/Exit" to="." method="_on_Settings_Exit_pressed"]
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed" binds= [ true ]]

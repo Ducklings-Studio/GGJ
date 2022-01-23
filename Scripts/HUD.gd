@@ -66,3 +66,21 @@ func _on_Settings_Exit_pressed():
 	
 func _change_Loc_Name(name):
 	$InGameHUD/LocationName.text = name
+
+
+func _on_Music_value_changed(value):
+	AudioManager.music_vol = -3*value
+	AudioManager.set_volume()
+
+
+func _on_Audio_value_changed(value):
+	AudioManager.audio_vol = -3*value
+	AudioManager.set_volume()
+
+
+func _on_LocCheckBox_toggled(button_pressed):
+	$InGameHUD/LocationName.set_visible(button_pressed)
+
+
+func _on_TimeCheckBox_toggled(button_pressed):
+	$InGameHUD/Time.set_visible(button_pressed)

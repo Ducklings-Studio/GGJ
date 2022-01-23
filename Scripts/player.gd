@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 180
 export (int) var jump_speed = -1000
 export (int) var gravity = 35
+export (bool) var isMain
 
 var velocity = Vector2.ZERO
 
@@ -22,6 +23,8 @@ func _physics_process(_delta):
 		$ASprite.flip_h = false
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		if isMain:
+			AudioManager.play("res://Assets/Audio/Jump.wav")
 		velocity.y = jump_speed
 		$ASprite.play("jump")
 	

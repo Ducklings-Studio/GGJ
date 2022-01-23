@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Прыжок.wav-19b301a4b3d0f3e607ae93c195f50cce.sample"
+path="res://.import/Jump.wav-304a1ab717cb88faca58c07ee224f25c.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Прыжок.wav"
-dest_files=[ "res://.import/Прыжок.wav-19b301a4b3d0f3e607ae93c195f50cce.sample" ]
+source_file="res://Assets/Audio/Jump.wav"
+dest_files=[ "res://.import/Jump.wav-304a1ab717cb88faca58c07ee224f25c.sample" ]
 
 [params]
 
