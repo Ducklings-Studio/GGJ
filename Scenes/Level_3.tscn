@@ -67,7 +67,6 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88.2075, -792.121 )
-collision_layer = 2
 speed = 300
 jump_speed = -900
 gravity = 50
@@ -90,7 +89,6 @@ editor_draw_drag_margin = true
 
 [node name="Player_copy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 972.978, -826.698 )
-collision_layer = 2
 speed = -300
 jump_speed = -900
 gravity = 50
@@ -115,7 +113,6 @@ scroll_limit_end = Vector2( 0, 648 )
 motion_scale = Vector2( 1, 0.1 )
 
 [node name="NightSky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 position = Vector2( 499.834, -276.736 )
 scale = Vector2( 1.40958, 1.39841 )
 texture = ExtResource( 1 )
