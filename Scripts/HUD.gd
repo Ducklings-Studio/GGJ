@@ -84,3 +84,7 @@ func _on_LocCheckBox_toggled(button_pressed):
 
 func _on_TimeCheckBox_toggled(button_pressed):
 	$InGameHUD/Time.set_visible(button_pressed)
+
+
+func _on_TutorialCheckBox_toggled(button_pressed):
+	Global.showTutorial = button_pressed

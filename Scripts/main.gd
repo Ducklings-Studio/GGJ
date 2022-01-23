@@ -1,20 +1,24 @@
 extends Node2D
 
-var current_lvl
+
+export var _listenerNodePath = ""
 var scenes = [preload("res://Scenes/Level_Test.tscn"), 
 				preload("res://Scenes/Level_1.tscn"),
 				preload("res://Scenes/Level_2.tscn"),
 				preload("res://Scenes/Level_3.tscn")]
-const names = ["Test", "Swamp", "City", "Castle"]
+const names = ["Test", "Swamp", "Mountains", "Castle"]
 var music = ["res://Assets/Audio/PamPam.wav",
 			"res://Assets/Audio/SwampBg.ogg", 
 			"res://Assets/Audio/MountainBg.ogg", 
 			"res://Assets/Audio/CastleBg.ogg"]
+var cameraSettings = [298, 302, 302, 300.576]
+var current_lvl
 var temp
-export var _listenerNodePath = ""
+var deathNum
 
 
 func _ready():
+	deathNum = 0
 	if (_listenerNodePath != "" && _listenerNodePath != null):
 		_listenerNodePath = get_node(_listenerNodePath)
 	elif _listenerNodePath == "":
@@ -22,7 +26,6 @@ func _ready():
 
 func _on_winning():
 	if current_lvl < 4:
-		print(current_lvl)
 		next_scene()
 	else:
 		#TODO winning scene
@@ -30,14 +33,14 @@ func _on_winning():
 
 
 func _on_death():
-	print("You dead")
+	deathNum += 1
 	AudioManager.play("res://Assets/Audio/Lose.wav")
 	_listenerNodePath._reset_timer()
-	_load_scene(max(0, current_lvl - 1))
+	_load_scene(max(1, current_lvl - 2))
 
 
 func _restart():
-	_load_scene(max(0, current_lvl - 1))
+	_load_scene(max(1, current_lvl - 1))
 
 
 func _load_scene(id):
@@ -48,6 +51,7 @@ func _load_scene(id):
 
 
 func next_scene():
+	Global.cameraSettings = cameraSettings[current_lvl]
 	AudioManager.set_music(music[current_lvl])
 	temp = scenes[current_lvl].instance()
 	call_deferred("add_child", temp)

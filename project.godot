@@ -20,6 +20,7 @@ config/icon="res://Assets/Other/logo.png"
 [autoload]
 
 AudioManager="*res://Scripts/audio_manager.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

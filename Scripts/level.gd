@@ -1,17 +1,20 @@
 extends Node2D
 
-#magic number
-var y_s = 298
+var y_s = 302
 
 var boom_effect = preload("res://Scenes/Boom.tscn")
 var tilemap
 
 func _ready():
 	tilemap = $TileMap
-	#y_s = 96 + $Player.position.y
+	if get_node_or_null("tutorial") != null:
+		$tutorial.set_visible(Global.showTutorial)
+	y_s = Global.cameraSettings
 
 func _input(event):
 	if event is InputEventMouseButton:
+		if get_node_or_null("tutorial") != null:
+			$tutorial.set_visible(Global.showTutorial)
 		var pos = event.position
 		if event.pressed:
 			var tile_pos = tilemap.world_to_map(pos)

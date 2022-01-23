@@ -42,5 +42,4 @@ func _unhandled_key_input(event):
 			get_tree().set_input_as_handled()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	#queue_free()
-	pass
+	queue_free()
