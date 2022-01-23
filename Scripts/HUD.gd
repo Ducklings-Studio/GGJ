@@ -5,6 +5,7 @@ var time
 var timer
 export var _listenerNodePath = ""
 var num = 0.2
+onready var animationHeart = $"MainMenu/AnimationHearts"
 
 
 func _ready():
@@ -15,6 +16,7 @@ func _ready():
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer)
+	animationHeart.play("updown")
 
 func _on_timer_timeout():
 	time += 1
@@ -64,12 +66,3 @@ func _on_Settings_Exit_pressed():
 	
 func _change_Loc_Name(name):
 	$InGameHUD/LocationName.text = name
-
-func _process(_delta):
-	var pos = $"MainMenu/redHeart".position.y
-	$"MainMenu/redHeart".position.y += num
-	$"MainMenu/blackHeart".position.y += num
-	if floor(pos) == 252:
-		num = -0.2
-	elif floor(pos) == 232:
-		num = 0.2
