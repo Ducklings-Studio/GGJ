@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Styles/button_styleboxflat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Styles/Regular_Style.tres" type="Theme" id=7]
 [ext_resource path="res://Assets/Other/menu-background.png" type="Texture" id=8]
 [ext_resource path="res://Styles/menu_labels.tres" type="Theme" id=9]
+[ext_resource path="res://Assets/Other/heart_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Other/heart_2.png" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -41,7 +43,6 @@ script = ExtResource( 3 )
 _listenerNodePath = "/root/root"
 
 [node name="InGameHUD" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -94,7 +95,6 @@ __meta__ = {
 }
 
 [node name="MiniMenu" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -412,6 +412,14 @@ lines_skipped = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="redHeart" type="Sprite" parent="MainMenu"]
+position = Vector2( 205, 235 )
+texture = ExtResource( 10 )
+
+[node name="blackHeart" type="Sprite" parent="MainMenu"]
+position = Vector2( 813, 235 )
+texture = ExtResource( 11 )
 
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]

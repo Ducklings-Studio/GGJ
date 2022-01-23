@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Птица.wav-58b5c99174a93f4aae5b6804b192a6af.sample"
+path="res://.import/Bird.wav-328c8f2091caf708fef5d7761ce2ae30.sample"
 
 [deps]
 
-source_file="res://Assets/Audio/Птица.wav"
-dest_files=[ "res://.import/Птица.wav-58b5c99174a93f4aae5b6804b192a6af.sample" ]
+source_file="res://Assets/Audio/Bird.wav"
+dest_files=[ "res://.import/Bird.wav-328c8f2091caf708fef5d7761ce2ae30.sample" ]
 
 [params]
 
