@@ -188,7 +188,6 @@ texture = ExtResource( 18 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2( 1, 0.1 )
 
 [node name="WallpaperDog-11005806" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
@@ -199,7 +198,6 @@ texture = ExtResource( 2 )
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
-visible = false
 motion_scale = Vector2( 1, 0.4 )
 
 [node name="Background_02" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]

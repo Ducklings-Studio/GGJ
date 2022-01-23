@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SwampBg.ogg-d41e257c55cdb5b3af77b0c7f340c64a.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SwampBg.ogg"
+dest_files=[ "res://.import/SwampBg.ogg-d41e257c55cdb5b3af77b0c7f340c64a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
