@@ -68,163 +68,165 @@ load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 [node name="Level" type="Node2D"]
 script = ExtResource( 6 )
 
-[node name="Tree1_r" type="Sprite" parent="."]
+[node name="decorations" type="Node2D" parent="."]
+
+[node name="Tree1_r" type="Sprite" parent="decorations"]
 position = Vector2( 942.612, -315.106 )
 scale = Vector2( 0.826166, 0.826166 )
 texture = ExtResource( 10 )
 flip_h = true
 
-[node name="Tree1" type="Sprite" parent="."]
+[node name="Tree1" type="Sprite" parent="decorations"]
 position = Vector2( 108.628, -324.42 )
 scale = Vector2( 0.775982, 0.775982 )
 texture = ExtResource( 9 )
 flip_h = true
 
-[node name="Pointer1" type="Sprite" parent="."]
+[node name="Pointer1" type="Sprite" parent="decorations"]
 position = Vector2( 84.045, 599.054 )
 texture = ExtResource( 11 )
 
-[node name="Pointer1_r" type="Sprite" parent="."]
+[node name="Pointer1_r" type="Sprite" parent="decorations"]
 position = Vector2( 946.441, 598.502 )
 texture = ExtResource( 12 )
 
-[node name="Alert_r" type="Sprite" parent="."]
+[node name="Alert_r" type="Sprite" parent="decorations"]
 position = Vector2( 943.207, 152.194 )
 texture = ExtResource( 8 )
 
-[node name="Stump1_r" type="Sprite" parent="."]
+[node name="Stump1_r" type="Sprite" parent="decorations"]
 position = Vector2( 913.483, 214.181 )
 scale = Vector2( 0.766405, 0.766405 )
 texture = ExtResource( 13 )
 
-[node name="Bush1" type="Sprite" parent="."]
+[node name="Bush1" type="Sprite" parent="decorations"]
 position = Vector2( 402.432, 475.174 )
 texture = ExtResource( 19 )
 
-[node name="Grass2" type="Sprite" parent="."]
+[node name="Grass2" type="Sprite" parent="decorations"]
 position = Vector2( 248.923, 603.104 )
 texture = ExtResource( 18 )
 
-[node name="Stump1" type="Sprite" parent="."]
+[node name="Stump1" type="Sprite" parent="decorations"]
 position = Vector2( 292.062, 595.069 )
 texture = ExtResource( 17 )
 
-[node name="Grass1" type="Sprite" parent="."]
+[node name="Grass1" type="Sprite" parent="decorations"]
 position = Vector2( 341.657, 602.677 )
 texture = ExtResource( 15 )
 
-[node name="Grass1_r" type="Sprite" parent="."]
+[node name="Grass1_r" type="Sprite" parent="decorations"]
 position = Vector2( 698.371, 599.804 )
 texture = ExtResource( 14 )
 
-[node name="Grass2_r" type="Sprite" parent="."]
+[node name="Grass2_r" type="Sprite" parent="decorations"]
 position = Vector2( 779.725, 601.488 )
 texture = ExtResource( 15 )
 
-[node name="Stump1_r2" type="Sprite" parent="."]
+[node name="Stump1_r2" type="Sprite" parent="decorations"]
 position = Vector2( 737.06, 595.443 )
 texture = ExtResource( 21 )
 
-[node name="Grass3_r" type="Sprite" parent="."]
+[node name="Grass3_r" type="Sprite" parent="decorations"]
 position = Vector2( 733.469, 601.365 )
 texture = ExtResource( 16 )
 
-[node name="Bush1_r" type="Sprite" parent="."]
+[node name="Bush1_r" type="Sprite" parent="decorations"]
 position = Vector2( 626.4, 475.364 )
 texture = ExtResource( 19 )
 flip_h = true
 
-[node name="Pointer2" type="Sprite" parent="."]
+[node name="Pointer2" type="Sprite" parent="decorations"]
 position = Vector2( 180.38, -56.759 )
 rotation = 0.6353
 texture = ExtResource( 12 )
 
-[node name="Fence1" type="Sprite" parent="."]
+[node name="Fence1" type="Sprite" parent="decorations"]
 position = Vector2( 82.7706, -999.672 )
 texture = ExtResource( 20 )
 flip_h = true
 
-[node name="Fence1_r" type="Sprite" parent="."]
+[node name="Fence1_r" type="Sprite" parent="decorations"]
 position = Vector2( 941.271, -999.292 )
 texture = ExtResource( 20 )
 
-[node name="Box1" type="Sprite" parent="."]
+[node name="Box1" type="Sprite" parent="decorations"]
 position = Vector2( 31.0541, -1002.72 )
 texture = ExtResource( 23 )
 
-[node name="Box1_r" type="Sprite" parent="."]
+[node name="Box1_r" type="Sprite" parent="decorations"]
 position = Vector2( 996.529, -1003.07 )
 texture = ExtResource( 23 )
 flip_h = true
 
-[node name="2" type="Sprite" parent="."]
+[node name="2" type="Sprite" parent="decorations"]
 position = Vector2( 271.859, -999.22 )
 texture = ExtResource( 15 )
 
-[node name="3" type="Sprite" parent="."]
+[node name="3" type="Sprite" parent="decorations"]
 position = Vector2( 687.569, -998.916 )
 texture = ExtResource( 15 )
 
-[node name="4" type="Sprite" parent="."]
+[node name="4" type="Sprite" parent="decorations"]
 position = Vector2( 465.607, -997.429 )
 texture = ExtResource( 15 )
 
-[node name="5" type="Sprite" parent="."]
+[node name="5" type="Sprite" parent="decorations"]
 position = Vector2( 561.107, -996.653 )
 texture = ExtResource( 15 )
 
-[node name="1" type="Sprite" parent="."]
+[node name="1" type="Sprite" parent="decorations"]
 position = Vector2( 272.593, -742.204 )
 texture = ExtResource( 14 )
 
-[node name="6" type="Sprite" parent="."]
+[node name="6" type="Sprite" parent="decorations"]
 position = Vector2( 753.993, -743.839 )
 texture = ExtResource( 14 )
 
-[node name="7" type="Sprite" parent="."]
+[node name="7" type="Sprite" parent="decorations"]
 position = Vector2( 466.857, -869.22 )
 texture = ExtResource( 24 )
 
-[node name="9" type="Sprite" parent="."]
+[node name="9" type="Sprite" parent="decorations"]
 position = Vector2( 1008.95, -717.874 )
 texture = ExtResource( 25 )
 
-[node name="10" type="Sprite" parent="."]
+[node name="10" type="Sprite" parent="decorations"]
 position = Vector2( 18.231, -718.329 )
 scale = Vector2( 1.40409, 1.40409 )
 texture = ExtResource( 26 )
 
-[node name="11" type="Sprite" parent="."]
+[node name="11" type="Sprite" parent="decorations"]
 position = Vector2( 14.4886, -1158.76 )
 texture = ExtResource( 14 )
 
-[node name="12" type="Sprite" parent="."]
+[node name="12" type="Sprite" parent="decorations"]
 position = Vector2( 1011.23, -1318.15 )
 texture = ExtResource( 15 )
 
-[node name="13" type="Sprite" parent="."]
+[node name="13" type="Sprite" parent="decorations"]
 position = Vector2( 16.7663, -1478.21 )
 texture = ExtResource( 14 )
 
-[node name="15" type="Sprite" parent="."]
+[node name="15" type="Sprite" parent="decorations"]
 position = Vector2( 145.98, -1771.8 )
 scale = Vector2( 0.876353, 0.876353 )
 texture = ExtResource( 9 )
 
-[node name="14" type="Sprite" parent="."]
+[node name="14" type="Sprite" parent="decorations"]
 position = Vector2( 1013.51, -1413.98 )
 texture = ExtResource( 15 )
 
-[node name="16" type="Sprite" parent="."]
+[node name="16" type="Sprite" parent="decorations"]
 position = Vector2( 843.47, -1768.31 )
 texture = ExtResource( 10 )
 
-[node name="8" type="Sprite" parent="."]
+[node name="8" type="Sprite" parent="decorations"]
 position = Vector2( 322.707, -1697.77 )
 rotation = 0.872665
 texture = ExtResource( 28 )
 
-[node name="17" type="Sprite" parent="."]
+[node name="17" type="Sprite" parent="decorations"]
 position = Vector2( 699.85, -1695.18 )
 rotation = -0.872665
 texture = ExtResource( 27 )
