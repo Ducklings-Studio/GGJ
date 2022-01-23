@@ -7,7 +7,6 @@ var music
 var queue = []  # The queue of sounds to play.
 var music_vol
 var audio_vol
-var t = 0;
 
 func _ready():
 	music_vol = -40
@@ -53,13 +52,3 @@ func _process(_delta):
 		available.pop_front()
 	elif available.size() == num_players:
 		music.set_volume_db(music_vol)
-	t += 1
-	if t == 150:
-		music.set_volume_db(0)
-		music_vol = 0
-		music.stream = load("res://Assets/Audio/lovely.mp3")
-		music.play()
-	if t == 250:
-		music.stream = load("res://Assets/Audio/Castle.wav")
-		music_vol = -40
-		music.play()

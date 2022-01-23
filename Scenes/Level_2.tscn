@@ -70,7 +70,6 @@ texture = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 50, 590 )
-collision_layer = 2
 speed = 300
 jump_speed = -900
 gravity = 50
@@ -92,7 +91,6 @@ editor_draw_drag_margin = true
 
 [node name="Player_copy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 975, 590 )
-collision_layer = 2
 speed = -300
 jump_speed = -900
 gravity = 50

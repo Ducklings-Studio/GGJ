@@ -28,14 +28,14 @@ shader_param/color = Color( 1, 0.843137, 0, 1 )
 shader_param/hdr = false
 shader_param/seed = 5.0
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 5 )
 
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 4 )
 
 [node name="HUD" type="CanvasLayer"]
@@ -43,6 +43,7 @@ script = ExtResource( 3 )
 _listenerNodePath = "/root/root"
 
 [node name="InGameHUD" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -75,14 +76,14 @@ __meta__ = {
 [node name="LocationName" type="Label" parent="InGameHUD"]
 anchor_right = 1.0
 margin_bottom = 40.0
-theme = SubResource( 4 )
+theme = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "Swamp"
 align = 1
 valign = 1
 
 [node name="GS-rect" type="ColorRect" parent="."]
-material = SubResource( 2 )
+material = SubResource( 4 )
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -95,6 +96,7 @@ __meta__ = {
 }
 
 [node name="MiniMenu" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
