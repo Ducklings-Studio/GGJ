@@ -1,13 +1,21 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Area2D.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Location/City/WallpaperDog-11005806.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Location/City/Background_02.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/level.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Location/City/Environment/Grass_01.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Location/City/Environment/Basket.png" type="Texture" id=7]
 [ext_resource path="res://Shaders/mirror.gdshader" type="Shader" id=8]
+[ext_resource path="res://Assets/Location/City/Environment/Well.png" type="Texture" id=9]
 [ext_resource path="res://Assets/TileSets/Game2TileSet.tres" type="TileSet" id=10]
 [ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Location/City/Environment/Rock_02.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Location/City/Environment/Street_Lantern.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Location/City/Environment/Decor_Cart.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Location/City/Environment/Pot.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Location/City/Environment/Rock_03.png" type="Texture" id=16]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 
@@ -48,9 +56,104 @@ shader_param/noise = SubResource( 6 )
 [node name="Level" type="Node2D"]
 script = ExtResource( 5 )
 
+[node name="Decoration" type="Node2D" parent="."]
+
+[node name="Basket2" type="Sprite" parent="Decoration"]
+position = Vector2( 990.631, 593.705 )
+scale = Vector2( 0.244507, 0.244507 )
+texture = ExtResource( 7 )
+
+[node name="Basket" type="Sprite" parent="Decoration"]
+position = Vector2( 32.0562, 594.499 )
+scale = Vector2( 0.244507, 0.244507 )
+texture = ExtResource( 7 )
+
+[node name="Grass_02" type="Sprite" parent="Decoration"]
+position = Vector2( 1001.7, 601.692 )
+scale = Vector2( 0.244507, 0.244507 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Grass_01" type="Sprite" parent="Decoration"]
+position = Vector2( 17.9936, 601.497 )
+scale = Vector2( 0.244507, 0.244507 )
+texture = ExtResource( 6 )
+
+[node name="Well" type="Sprite" parent="Decoration"]
+position = Vector2( 61.5, -545.5 )
+scale = Vector2( 0.31875, 0.31875 )
+texture = ExtResource( 9 )
+
+[node name="Grass_03" type="Sprite" parent="Decoration"]
+position = Vector2( 25.2575, -486.781 )
+scale = Vector2( 0.281845, 0.281845 )
+texture = ExtResource( 6 )
+
+[node name="Grass_04" type="Sprite" parent="Decoration"]
+position = Vector2( 101.594, -486.72 )
+scale = Vector2( 0.26251, 0.26251 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Rock_02" type="Sprite" parent="Decoration"]
+position = Vector2( 431.606, -972.083 )
+scale = Vector2( 0.319, 0.319 )
+texture = ExtResource( 12 )
+
+[node name="Well2" type="Sprite" parent="Decoration"]
+position = Vector2( 961.5, -550.5 )
+scale = Vector2( 0.319, 0.319 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Street_Lantern2" type="Sprite" parent="Decoration"]
+position = Vector2( 87.9383, 159.002 )
+scale = Vector2( 0.175802, 0.175802 )
+texture = ExtResource( 13 )
+
+[node name="Pot2" type="Sprite" parent="Decoration"]
+position = Vector2( 752.235, 275.782 )
+scale = Vector2( 0.213, 0.213 )
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="Pot" type="Sprite" parent="Decoration"]
+position = Vector2( 176.349, 500.058 )
+scale = Vector2( 0.212653, 0.212653 )
+texture = ExtResource( 15 )
+
+[node name="Rock_03" type="Sprite" parent="Decoration"]
+position = Vector2( 109.426, -1187.13 )
+rotation = 0.0872665
+scale = Vector2( 0.198482, 0.198482 )
+texture = ExtResource( 16 )
+
+[node name="Decor_Cart" type="Sprite" parent="Decoration"]
+position = Vector2( 64.9946, -1226.93 )
+scale = Vector2( 0.347889, 0.347889 )
+texture = ExtResource( 14 )
+
+[node name="Grass_05" type="Sprite" parent="Decoration"]
+position = Vector2( 922.527, -486.63 )
+scale = Vector2( 0.263, 0.263 )
+texture = ExtResource( 6 )
+
+[node name="Grass_06" type="Sprite" parent="Decoration"]
+position = Vector2( 994.87, -485.94 )
+scale = Vector2( 0.263, 0.263 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Street_Lantern" type="Sprite" parent="Decoration"]
+position = Vector2( 937.603, 150.677 )
+scale = Vector2( 0.175802, 0.175802 )
+texture = ExtResource( 13 )
+flip_h = true
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2( 1, 0.1 )
 
 [node name="WallpaperDog-11005806" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
@@ -61,6 +164,7 @@ texture = ExtResource( 2 )
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+visible = false
 motion_scale = Vector2( 1, 0.4 )
 
 [node name="Background_02" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
