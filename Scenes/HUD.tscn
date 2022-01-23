@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Styles/button_styleboxflat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=2]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
 [ext_resource path="res://Shaders/grayscale.gdshader" type="Shader" id=4]
+[ext_resource path="res://Assets/Fonts/Pixellari.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Styles/Pixellari_style.tres" type="Theme" id=6]
 [ext_resource path="res://Styles/Regular_Style.tres" type="Theme" id=7]
 [ext_resource path="res://Assets/Other/menu-background.png" type="Texture" id=8]
@@ -28,24 +29,36 @@ shader_param/color = Color( 1, 0.843137, 0, 1 )
 shader_param/hdr = false
 shader_param/seed = 5.0
 
+[sub_resource type="DynamicFont" id=11]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
 
 [sub_resource type="ImageTexture" id=3]
 
-[sub_resource type="ImageTexture" id=4]
+[sub_resource type="ImageTexture" id=7]
 
-[sub_resource type="StyleBoxTexture" id=5]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 400, 50 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="ImageTexture" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[sub_resource type="Animation" id=6]
 resource_name = "updown"
 length = 3.0
 loop = true
@@ -111,7 +124,8 @@ __meta__ = {
 
 [node name="LocationName" type="Label" parent="InGameHUD"]
 anchor_right = 1.0
-margin_bottom = 40.0
+margin_bottom = 31.0
+theme = SubResource( 12 )
 custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "Swamp"
 align = 1
@@ -246,10 +260,10 @@ margin_bottom = -140.0
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 240, 25 )
 custom_icons/grabber_highlight = SubResource( 3 )
-custom_icons/grabber = SubResource( 4 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area_highlight = SubResource( 6 )
-custom_styles/grabber_area = SubResource( 7 )
+custom_icons/grabber = SubResource( 7 )
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 8 )
+custom_styles/grabber_area = SubResource( 5 )
 max_value = 10.0
 value = 2.0
 scrollable = false
@@ -286,10 +300,10 @@ margin_bottom = -20.0
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 240, 25 )
 custom_icons/grabber_highlight = SubResource( 3 )
-custom_icons/grabber = SubResource( 4 )
-custom_styles/slider = SubResource( 5 )
-custom_styles/grabber_area_highlight = SubResource( 6 )
-custom_styles/grabber_area = SubResource( 7 )
+custom_icons/grabber = SubResource( 9 )
+custom_styles/slider = SubResource( 4 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 5 )
 max_value = 10.0
 value = 2.0
 scrollable = false
@@ -510,7 +524,7 @@ position = Vector2( 813, 235 )
 texture = ExtResource( 11 )
 
 [node name="AnimationHearts" type="AnimationPlayer" parent="MainMenu"]
-anims/updown = SubResource( 8 )
+anims/updown = SubResource( 6 )
 
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]
