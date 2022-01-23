@@ -16,7 +16,7 @@ func _ready():
 	timer = Timer.new()
 	timer.connect("timeout",self,"_on_timer_timeout") 
 	add_child(timer)
-	animationHeart.play("updown")
+	#animationHeart.play("updown")
 
 func _on_timer_timeout():
 	time += 1
