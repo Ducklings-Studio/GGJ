@@ -23,6 +23,7 @@ func _on_timer_timeout():
 	$InGameHUD/Time.text = String(time)
 
 func _reset_timer():
+	Global.deathNum = 0
 	time = 0
 	timer.start()
 	$InGameHUD/Time.text = "0"
@@ -42,7 +43,7 @@ func _on_Play_pressed():
 	$MainMenu.set_visible(false)
 	$InGameHUD.set_visible(true)
 	_reset_timer()
-	_listenerNodePath._load_scene(1)
+	_listenerNodePath._load_scene(3)
 
 
 func _on_Main_Exit_pressed():
@@ -88,3 +89,17 @@ func _on_TimeCheckBox_toggled(button_pressed):
 
 func _on_TutorialCheckBox_toggled(button_pressed):
 	Global.showTutorial = button_pressed
+
+
+func congrats():
+	AudioManager.set_music("res://Assets/Audio/MainBg.ogg")
+	$FinalWidget/Time.text = str("Your time is ", time, " sec")
+	$FinalWidget/Deathes.text = str("You died ", Global.deathNum, " times")
+	$FinalWidget.set_visible(true)
+	$InGameHUD.set_visible(false)
+
+
+func _on_Final_Exit_pressed():
+	AudioManager.set_music("res://Assets/Audio/MainBg.ogg")
+	$FinalWidget.set_visible(false)
+	$MainMenu.set_visible(true)

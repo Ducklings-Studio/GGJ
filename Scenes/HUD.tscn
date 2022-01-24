@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Styles/button_styleboxflat.tres" type="StyleBox" id=1]
 [ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Assets/Other/heart_1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Other/heart_2.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Other/slider.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Other/EndScreen.jpg" type="Texture" id=13]
+[ext_resource path="res://Styles/FinalScene.tres" type="Theme" id=14]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -86,12 +88,54 @@ tracks/1/keys = {
 "values": [ Vector2( 813, 252 ), Vector2( 813, 232 ), Vector2( 813, 252 ) ]
 }
 
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0, 0.5, 1 )
+colors = PoolColorArray( 1, 0, 0.792157, 1, 0.164706, 0, 1, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=14]
+gradient = SubResource( 13 )
+
+[sub_resource type="Curve" id=15]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 1.0
+scale_curve = SubResource( 16 )
+color_ramp = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 1.0
+scale_curve = SubResource( 16 )
+color_ramp = SubResource( 14 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 3 )
 _listenerNodePath = "/root/root"
 
 [node name="InGameHUD" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -129,6 +173,21 @@ custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "Swamp"
 align = 1
 valign = 1
+
+[node name="Cinema" type="Control" parent="InGameHUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="InGameHUD/Cinema"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="InGameHUD/Cinema"]
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="GS-rect" type="ColorRect" parent="."]
 material = SubResource( 4 )
@@ -559,6 +618,134 @@ texture = ExtResource( 11 )
 [node name="AnimationHearts" type="AnimationPlayer" parent="MainMenu"]
 anims/updown = SubResource( 12 )
 
+[node name="FinalWidget" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -579.073, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="FinalWidget"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -894.0
+margin_top = -30.0
+margin_right = 2.0
+margin_bottom = 10.0
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Congrats" type="Label" parent="FinalWidget"]
+anchor_right = 1.0
+margin_top = 16.0
+margin_bottom = 56.0
+theme = ExtResource( 14 )
+text = "Congratulations"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="FinalWidget"]
+anchor_right = 1.0
+margin_top = 56.0
+margin_bottom = 96.0
+theme = ExtResource( 14 )
+text = "Congratulations"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deathes" type="Label" parent="FinalWidget"]
+anchor_right = 1.0
+margin_top = 96.0
+margin_bottom = 136.0
+theme = ExtResource( 14 )
+text = "Congratulations"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="FinalWidget"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -66.0
+margin_right = 164.0
+theme = ExtResource( 6 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.384314, 0.384314, 0.384314, 1 )
+custom_colors/font_color_pressed = Color( 0.384314, 0.384314, 0.384314, 1 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fireworks" type="Node2D" parent="FinalWidget"]
+
+[node name="Firework" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 114.293, 111.118 )
+amount = 25
+lifetime = 4.0
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 17 )
+
+[node name="Firework2" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 246.163, 339.468 )
+amount = 25
+lifetime = 4.0
+preprocess = 370.4
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 17 )
+
+[node name="Firework3" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 162.141, 206.929 )
+amount = 25
+lifetime = 4.0
+preprocess = 129.78
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 17 )
+
+[node name="Firework4" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 913.116, 114.84 )
+amount = 25
+lifetime = 4.0
+preprocess = 600.0
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 17 )
+
+[node name="Firework5" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 93.9575, 389.333 )
+amount = 25
+lifetime = 4.0
+preprocess = 506.25
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 17 )
+
+[node name="Firework6" type="Particles2D" parent="FinalWidget/Fireworks"]
+position = Vector2( 782.478, 154.579 )
+amount = 25
+lifetime = 4.0
+preprocess = 262.5
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 18 )
+
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]
 [connection signal="pressed" from="MiniMenu/Exit" to="." method="_on_Mini_Exit_pressed"]
@@ -571,3 +758,4 @@ anims/updown = SubResource( 12 )
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed" binds= [ true ]]
 [connection signal="pressed" from="MainMenu/Exit" to="." method="_on_Main_Exit_pressed"]
+[connection signal="pressed" from="FinalWidget/Exit" to="." method="_on_Final_Exit_pressed"]

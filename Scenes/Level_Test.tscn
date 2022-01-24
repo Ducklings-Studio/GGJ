@@ -74,6 +74,7 @@ position = Vector2( 280.543, 202.597 )
 speed = 300
 jump_speed = -800
 gravity = 50
+isMain = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 256, 0 )

@@ -14,26 +14,24 @@ var music = ["res://Assets/Audio/PamPam.wav",
 var cameraSettings = [298, 302, 302, 300.576]
 var current_lvl
 var temp
-var deathNum
 
 
 func _ready():
-	deathNum = 0
+	Global.deathNum = 0
 	if (_listenerNodePath != "" && _listenerNodePath != null):
 		_listenerNodePath = get_node(_listenerNodePath)
 	elif _listenerNodePath == "":
 		_listenerNodePath = null
 
 func _on_winning():
-	if current_lvl < 4:
+	if current_lvl < 0:
 		next_scene()
 	else:
-		#TODO winning scene
-		print("You won")
+		_listenerNodePath.congrats()
 
 
 func _on_death():
-	deathNum += 1
+	Global.deathNum += 1
 	AudioManager.play("res://Assets/Audio/Lose.wav")
 	_listenerNodePath._reset_timer()
 	_load_scene(max(1, current_lvl - 2))
@@ -44,7 +42,7 @@ func _restart():
 
 
 func _load_scene(id):
-	if temp != null:
+	if temp != null and is_instance_valid(temp):
 		temp.queue_free()
 	current_lvl = id
 	next_scene()
@@ -57,4 +55,3 @@ func next_scene():
 	call_deferred("add_child", temp)
 	_listenerNodePath._change_Loc_Name(names[current_lvl])
 	current_lvl += 1
-	current_lvl %= 3

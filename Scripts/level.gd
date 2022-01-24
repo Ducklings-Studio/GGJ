@@ -24,20 +24,25 @@ func _input(event):
 			var cell_sp = tilemap.get_cell_autotile_coord(tile_pos.x, tile_pos.y)
 			var cell2 = tilemap.get_cell(31 - tile_pos.x, tile_pos.y)
 			if cell != -1 and cell2 == -1:
-				var effect = boom_effect.instance()
-				add_child(effect)
-				effect.global_position = (2*tile_pos + Vector2.ONE)*16
-				var effect2 = boom_effect.instance()
-				add_child(effect2)
-				effect2.global_position = Vector2(63 - 2*tile_pos.x, 2*tile_pos.y+1)*16
+				add_effects(tile_pos)
 				
-				var fl = tilemap.is_cell_x_flipped(tile_pos.x, tile_pos.y)
 				tilemap.set_cell(31 - tile_pos.x, tile_pos.y, cell, 
-				!fl, false, false, cell_sp)
+				!tilemap.is_cell_x_flipped(tile_pos.x, tile_pos.y), false, false, cell_sp)
 				tilemap.set_cell(tile_pos.x, tile_pos.y, -1)
+				
 				AudioManager.play("res://Assets/Audio/Translation.wav")
 				if is_dead(pos):
 					$Player_copy.queue_free()
+
+
+func add_effects(tile_pos):
+	var effect = boom_effect.instance()
+	add_child(effect)
+	effect.global_position = (2*tile_pos + Vector2.ONE)*16
+	var effect2 = boom_effect.instance()
+	add_child(effect2)
+	effect2.global_position = Vector2(63 - 2*tile_pos.x, 2*tile_pos.y+1)*16
+
 
 func is_dead(pos):
 	var pg_1 = $Player.get_global_transform_with_canvas().origin
