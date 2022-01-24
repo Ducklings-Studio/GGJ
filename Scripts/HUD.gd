@@ -103,3 +103,7 @@ func _on_Final_Exit_pressed():
 	AudioManager.set_music("res://Assets/Audio/MainBg.ogg")
 	$FinalWidget.set_visible(false)
 	$MainMenu.set_visible(true)
+
+
+func _set_cinema_visible(visible):
+	$InGameHUD/Cinema.set_visible(visible)

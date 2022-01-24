@@ -24,7 +24,7 @@ func _ready():
 		_listenerNodePath = null
 
 func _on_winning():
-	if current_lvl < 0:
+	if current_lvl < 4:
 		next_scene()
 	else:
 		_listenerNodePath.congrats()

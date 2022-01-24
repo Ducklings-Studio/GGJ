@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Styles/button_styleboxflat.tres" type="StyleBox" id=1]
-[ext_resource path="res://Shaders/godrays.gdshader" type="Shader" id=2]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
 [ext_resource path="res://Shaders/grayscale.gdshader" type="Shader" id=4]
 [ext_resource path="res://Assets/Fonts/Pixellari.ttf" type="DynamicFontData" id=5]
@@ -14,22 +13,6 @@
 [ext_resource path="res://Assets/Other/slider.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Other/EndScreen.jpg" type="Texture" id=13]
 [ext_resource path="res://Styles/FinalScene.tres" type="Theme" id=14]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
-shader_param/angle = -0.3
-shader_param/position = -0.2
-shader_param/spread = 0.348
-shader_param/cutoff = 0.154
-shader_param/falloff = 0.01
-shader_param/edge_fade = 0.112
-shader_param/speed = 1.0
-shader_param/ray1_density = 10.0
-shader_param/ray2_density = 30.0
-shader_param/ray2_intensity = 0.354
-shader_param/color = Color( 1, 0.843137, 0, 1 )
-shader_param/hdr = false
-shader_param/seed = 5.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -156,15 +139,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="God-rays" type="ColorRect" parent="InGameHUD"]
-visible = false
-material = SubResource( 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="LocationName" type="Label" parent="InGameHUD"]
 anchor_right = 1.0
 margin_bottom = 31.0
@@ -175,8 +149,12 @@ align = 1
 valign = 1
 
 [node name="Cinema" type="Control" parent="InGameHUD"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="InGameHUD/Cinema"]
 anchor_right = 1.0
