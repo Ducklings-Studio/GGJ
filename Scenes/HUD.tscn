@@ -14,36 +14,36 @@
 [ext_resource path="res://Assets/Other/EndScreen.jpg" type="Texture" id=13]
 [ext_resource path="res://Styles/FinalScene.tres" type="Theme" id=14]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 5 )
 
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 4 )
+
+[sub_resource type="ImageTexture" id=4]
 
 [sub_resource type="ImageTexture" id=5]
 
-[sub_resource type="ImageTexture" id=6]
-
-[sub_resource type="StyleBoxTexture" id=7]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 400, 50 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.588235 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="ImageTexture" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 0.588235 )
 
-[sub_resource type="ImageTexture" id=10]
-
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0, 0, 0, 0.588235 )
-
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 length = 3.0
 loop = true
 tracks/0/type = "value"
@@ -71,18 +71,33 @@ tracks/1/keys = {
 "values": [ Vector2( 813, 252 ), Vector2( 813, 232 ), Vector2( 813, 252 ) ]
 }
 
-[sub_resource type="Gradient" id=13]
+[sub_resource type="Gradient" id=12]
 offsets = PoolRealArray( 0, 0.5, 1 )
 colors = PoolColorArray( 1, 0, 0.792157, 1, 0.164706, 0, 1, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=14]
-gradient = SubResource( 13 )
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=14]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.25
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 1.0
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
 
 [sub_resource type="ParticlesMaterial" id=17]
 emission_shape = 1
@@ -96,23 +111,8 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.0
 scale_random = 1.0
-scale_curve = SubResource( 16 )
-color_ramp = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=18]
-emission_shape = 1
-emission_sphere_radius = 5.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 0.25
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 10.0
-scale_random = 1.0
-scale_curve = SubResource( 16 )
-color_ramp = SubResource( 14 )
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -142,7 +142,7 @@ __meta__ = {
 [node name="LocationName" type="Label" parent="InGameHUD"]
 anchor_right = 1.0
 margin_bottom = 31.0
-theme = SubResource( 3 )
+theme = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 0.333333 )
 text = "Swamp"
 align = 1
@@ -168,7 +168,7 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="GS-rect" type="ColorRect" parent="."]
-material = SubResource( 4 )
+material = SubResource( 3 )
 anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -295,11 +295,11 @@ margin_right = 251.0
 margin_bottom = -172.0
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 240, 25 )
-custom_icons/grabber_highlight = SubResource( 5 )
-custom_icons/grabber = SubResource( 6 )
-custom_styles/slider = SubResource( 7 )
-custom_styles/grabber_area_highlight = SubResource( 8 )
-custom_styles/grabber_area = SubResource( 9 )
+custom_icons/grabber_highlight = SubResource( 4 )
+custom_icons/grabber = SubResource( 5 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 7 )
+custom_styles/grabber_area = SubResource( 8 )
 max_value = 10.0
 scrollable = false
 __meta__ = {
@@ -334,11 +334,11 @@ margin_right = 251.0
 margin_bottom = -52.0
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 240, 25 )
-custom_icons/grabber_highlight = SubResource( 5 )
-custom_icons/grabber = SubResource( 10 )
-custom_styles/slider = SubResource( 7 )
-custom_styles/grabber_area_highlight = SubResource( 11 )
-custom_styles/grabber_area = SubResource( 9 )
+custom_icons/grabber_highlight = SubResource( 4 )
+custom_icons/grabber = SubResource( 9 )
+custom_styles/slider = SubResource( 6 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 8 )
 max_value = 10.0
 scrollable = false
 __meta__ = {
@@ -594,7 +594,7 @@ position = Vector2( 813, 235 )
 texture = ExtResource( 11 )
 
 [node name="AnimationHearts" type="AnimationPlayer" parent="MainMenu"]
-anims/updown = SubResource( 12 )
+anims/updown = SubResource( 11 )
 
 [node name="FinalWidget" type="Control" parent="."]
 visible = false
@@ -677,7 +677,7 @@ amount = 25
 lifetime = 4.0
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 17 )
+process_material = SubResource( 16 )
 
 [node name="Firework2" type="Particles2D" parent="FinalWidget/Fireworks"]
 position = Vector2( 246.163, 339.468 )
@@ -686,7 +686,7 @@ lifetime = 4.0
 preprocess = 370.4
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 17 )
+process_material = SubResource( 16 )
 
 [node name="Firework3" type="Particles2D" parent="FinalWidget/Fireworks"]
 position = Vector2( 162.141, 206.929 )
@@ -695,7 +695,7 @@ lifetime = 4.0
 preprocess = 129.78
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 17 )
+process_material = SubResource( 16 )
 
 [node name="Firework4" type="Particles2D" parent="FinalWidget/Fireworks"]
 position = Vector2( 913.116, 114.84 )
@@ -704,7 +704,7 @@ lifetime = 4.0
 preprocess = 600.0
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 17 )
+process_material = SubResource( 16 )
 
 [node name="Firework5" type="Particles2D" parent="FinalWidget/Fireworks"]
 position = Vector2( 93.9575, 389.333 )
@@ -713,7 +713,7 @@ lifetime = 4.0
 preprocess = 506.25
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 17 )
+process_material = SubResource( 16 )
 
 [node name="Firework6" type="Particles2D" parent="FinalWidget/Fireworks"]
 position = Vector2( 782.478, 154.579 )
@@ -722,7 +722,7 @@ lifetime = 4.0
 preprocess = 262.5
 explosiveness = 1.0
 randomness = 1.0
-process_material = SubResource( 18 )
+process_material = SubResource( 17 )
 
 [connection signal="pressed" from="MiniMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MiniMenu/Settings" to="." method="_on_Settings_pressed" binds= [ false ]]
