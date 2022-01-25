@@ -34,7 +34,7 @@ func _on_death():
 	Global.deathNum += 1
 	AudioManager.play("res://Assets/Audio/Lose.wav")
 	_listenerNodePath._reset_timer()
-	_load_scene(max(1, current_lvl - 2))
+	_restart()
 
 
 func _restart():
