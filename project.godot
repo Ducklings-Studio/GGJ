@@ -16,6 +16,8 @@ boot_splash/image="res://Assets/Other/logo512_512.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 0.705882, 0, 1 )
 config/icon="res://Assets/Other/logo.png"
+config/macos_native_icon="res://Assets/Other/logo.icns"
+config/windows_native_icon="res://Assets/Other/logo.ico"
 
 [autoload]
 
