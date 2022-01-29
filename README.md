@@ -7,3 +7,5 @@
 - [Shaders](https://godotshaders.com/shader/).
 - [UI elements](https://www.flaticon.com/ru/).
 - [2d Game Assets](https://craftpix.net).
+- [Trailer](https://www.youtube.com/watch?v=GnkO6Va3NJo&feature=youtu.be).
+- [Play Now!](https://ducklings-studio.itch.io/split-world).
